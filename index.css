@@ -1,0 +1,146 @@
+* {
+    /*font-family : à modifier;*/
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-style: none;
+    text-decoration: none;
+}
+
+body {
+	margin: 0;
+  width: 100%;
+  height: 100%;
+	background: linear-gradient(-50deg, #F0BBB4 25%, #F4BCAC 32%, #FFBE98 64%);
+	animation: gradient 5s ease infinite;
+}
+
+.fond {
+    display: flex;
+    margin: 1.5em;
+    border-radius: 15px;
+    background-color: #ffffff31;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.123);
+}
+
+navbar {
+    display: flex;
+    width: 250px;
+    flex-direction: column;
+    padding: 1em;
+    background-color: #F7E9DE;
+    gap: 1.5em;
+    border-radius: 15px;
+}
+navbar .logo .texte-logo {
+  display: flex;
+  justify-content: center;
+  background-color: #F15F61;
+  color: #F0BBB4;
+  padding: 0.2em;
+  border-radius: 15px;
+}
+navbar a {
+    display: flex;
+    justify-content: center;
+    padding: 0.5em;
+    border-radius: 15px;
+    color: #F15F61;
+    font-weight: 800;
+}
+navbar a:hover {
+    color: #F15F61;
+    background-color: #F0BBB4;
+    fill: #F15F61 !important;
+}
+navbar .pages a svg {
+    width: 1.5em;
+    margin-right: 1em;
+    fill: #F15F61;
+}
+navbar .active svg {
+  fill: #F0BBB4 !important;
+}
+navbar .active {
+    background-color: #F15F61;
+    color: #F0BBB4;
+}
+navbar .footer-navbar {
+    margin-top: 2em;
+    display: flex;
+    gap: 1em;
+}
+navbar .footer-navbar svg {
+    width: 1.5em;
+    fill: #F15F61;
+}
+navbar .profil img {
+    width: 2.5em;
+}
+navbar .fermer-sidebar {
+  display: flex;
+  margin-left: auto;
+}
+
+.zone-calendrier {
+  background-color: #F7E9DE;
+  border-radius: 15px;
+  padding: 1em;
+}
+.ajouter-tache {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  padding: 0.7em;
+  background-color: #F15F61;
+  border-radius: 15px;
+  margin-left: auto;
+}
+.ajouter-tache svg {
+  width: 1em;
+  fill: #F0BBB4;
+}
+.calendar {
+  margin: 1em;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  gap: 1em;
+}
+.header button {
+  border-radius: 15px;
+  padding: 0.7em;
+}
+
+.calendar-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.calendar-table th, .calendar-table td {
+  padding: 0.3em;
+  text-align: center;
+}
+
+.calendar-table td.current-day {
+  background-color: #F15F61;
+  color: #F0BBB4;
+  font-weight: bold;
+  border-radius: 15px;
+}
+
+button {
+  padding: 5px;
+  background-color: #F15F61;
+  color: #F0BBB4;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #F0BBB4;
+  color: #F15F61;
+}
