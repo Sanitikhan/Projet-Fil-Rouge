@@ -13,9 +13,14 @@ body {
 	animation: gradient 5s ease infinite;
 }
 
+.row-horssidebar {
+  display: flex;
+  flex-direction: column;
+}
+
 .fond {
     display: flex;
-    margin: 1.5em;
+    margin: 1em;
     border-radius: 15px;
     background-color: #ffffff31;
     box-shadow: 0 2px 16px rgba(0, 0, 0, 0.123);
@@ -78,6 +83,18 @@ navbar .profil img {
 navbar .fermer-sidebar {
   display: flex;
   margin-left: auto;
+}
+
+.zone-logout {
+  background-color: #F7E9DE;
+  border-radius: 15px;
+  padding: 1em;
+  justify-content: flex-end;
+}
+
+.logout-button button {
+  padding: 0.7em;
+  border-radius: 15px;
 }
 
 .zone-calendrier {
