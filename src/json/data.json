@@ -1,0 +1,63 @@
+{
+    "groups": [
+        {
+            "id": "card1",
+            "name": "Group 1",
+            "description": "Description",
+            "tasks": [
+                {
+                    "title": "Tâche 1",
+                    "description": "Description de la tâche 1",
+                    "deadline": "2024-10-30T23:59:00",
+                    "completed": false
+                },
+                {
+                    "title": "Tâche 2",
+                    "description": "Description de la tâche 2",
+                    "deadline": "2024-11-15T18:00:00",
+                    "completed": true
+                }
+            ],
+            "completed" : false,
+            "members": [
+                {
+                    "name": "Alice",
+                    "role": "Manager"
+                },
+                {
+                    "name": "Bob",
+                    "role": "Développeur"
+                }
+            ]
+        },
+        {
+            "id": "card2",
+            "name": "Group 2",
+            "description": "Description",
+            "tasks": [
+                {
+                    "title": "Tâche 1",
+                    "description": "Description de la tâche 1",
+                    "deadline": "2024-10-30T23:59:00",
+                    "completed": false
+                },
+                {
+                    "title": "Tâche 2",
+                    "description": "Description de la tâche 2",
+                    "deadline": "2024-11-15T18:00:00",
+                    "completed": true
+                }
+            ],
+            "members": [
+                {
+                    "name": "Bob",
+                    "role": "Manager"
+                },
+                {
+                    "name": "Alice",
+                    "role": "Développeur"
+                }
+            ]
+        }
+    ]
+}

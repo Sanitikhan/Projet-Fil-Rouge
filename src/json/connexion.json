@@ -1,0 +1,14 @@
+{
+    "users": [
+        {
+            "email": "john@example.com",
+            "password": "john123",
+            "profilePic": "../../image/profiles/h1.png"
+        },
+        {
+            "email": "jane@example.com",
+            "password": "hashedpassword",
+            "profilePic": "../../image/profiles/f1.png"
+        }
+    ]
+}
