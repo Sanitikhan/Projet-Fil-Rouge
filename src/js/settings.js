@@ -1,35 +1,64 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const profilePicForm = document.getElementById('profilePicForm');
-    const fileInput = document.getElementById('newProfilePic');
-    const previewImage = document.getElementById('previewImage');
+    const profilePictures = document.querySelectorAll('.profile-option');
+    const currentProfilePic = document.getElementById('current-profile-pic');
+    const saveButton = document.getElementById('saveProfilePicture');
 
-    // Prévisualiser l'image sélectionnée
-    fileInput.addEventListener('change', function() {
-        const file = fileInput.files[0];
+    // Charger l'utilisateur connecté à partir du localStorage
+    const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
 
-        if (file) {
-            const reader = new FileReader();
+    // Afficher la photo de profil actuelle (si définie)
+    if (loggedInUser && loggedInUser.profilePicture) {
+        currentProfilePic.src = loggedInUser.profilePicture;
+    } else {
+        currentProfilePic.src = '../image/profil.png';  // photo de profil par défaut
+    }
 
-            reader.onload = function(e) {
-                previewImage.src = e.target.result;
-                previewImage.style.display = 'block'; // Affiche l'image
-            };
+    let selectedPicture = loggedInUser.profilePicture;  // Par défaut, la photo actuelle
 
-            reader.readAsDataURL(file);
-        }
+    // Gestion de la sélection de la photo de profil
+    profilePictures.forEach(picture => {
+        picture.addEventListener('click', function() {
+            selectedPicture = this.dataset.image;  // Mettre à jour l'image sélectionnée
+            currentProfilePic.src = selectedPicture;  // Prévisualiser la photo sélectionnée
+        });
     });
 
-    // Gestion de l'upload de l'image
-    profilePicForm.addEventListener('submit', function(event) {
-        event.preventDefault();
+    // Sauvegarder la photo de profil
+    saveButton.addEventListener('click', function() {
+        if (loggedInUser) {
+            loggedInUser.profilePicture = selectedPicture;
 
-        const file = fileInput.files[0];
+            // Mettre à jour les données dans le localStorage
+            localStorage.setItem('loggedInUser', JSON.stringify(loggedInUser));
 
-        if (file) {
-            // Ici, tu peux faire un appel à ton serveur pour sauvegarder l'image
-            console.log('Image prête à être envoyée au serveur');
+            // Émettre un événement personnalisé pour indiquer que la photo de profil a changé
+            window.dispatchEvent(new Event('profilePictureChanged'));
+
+            alert('Photo de profil sauvegardée avec succès !');
         } else {
-            alert('Veuillez sélectionner une image.');
+            alert('Erreur : Aucun utilisateur connecté');
         }
     });
+
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+    const profileImage = document.getElementById('profileImage');
+
+    // Fonction pour mettre à jour l'image de profil
+    function updateProfileImage() {
+        const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+        if (loggedInUser && loggedInUser.profilePicture) {
+            profileImage.src = loggedInUser.profilePicture;
+        } else {
+            profileImage.src = '../image/profil.png';  // photo de profil par défaut
+        }
+    }
+
+    // Mettre à jour l'image de profil au chargement de la page
+    updateProfileImage();
+
+    // Écouter l'événement personnalisé
+    window.addEventListener('profilePictureChanged', updateProfileImage);
+});
+

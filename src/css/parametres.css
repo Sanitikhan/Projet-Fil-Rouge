@@ -1,3 +1,8 @@
 .zone-parametres {
     text-align: center;
 }
+
+img {
+    width: 4em;
+    cursor: pointer;
+}

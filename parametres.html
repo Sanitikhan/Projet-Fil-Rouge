@@ -48,7 +48,7 @@
                 <div class="row footer-navbar">
                     <div class="profil">
                         <a href="#">
-                        <img src="image/profil.png">
+                        <img id="profileImage" src="" alt="Profile Picture" class="profile-pic">
                         </a>
                     </div>
                         <a href="parametres.html" class="active">
@@ -67,18 +67,19 @@
                     <div class="zone-parametres">
                         <div class="title-parametres">
                             <h1>Paramètres</h1>
+                            <h2>Choisissez une photo de profil</h2>
 
-                            <!-- Formulaire de modification de la photo de profil -->
-                            <form id="profilePicForm">
-                                <label for="newProfilePic">Changer votre photo de profil</label>
-                                <input type="file" id="newProfilePic" accept="image/*">
-                                <button type="submit">Télécharger</button>
-                            </form>
-
-                            <div id="profilePreview">
-                                <p>Prévisualisation :</p>
-                                <img id="previewImage" src="#" alt="Votre photo de profil" style="display: none;">
+                            <div id="profile-options">
+                                <img src="image/profiles/f1.png" alt="Profile 1" class="profile-option" data-image="image/profiles/f1.png">
+                                <img src="image/profiles/h1.png" alt="Profile 2" class="profile-option" data-image="image/profiles/h1.png">
+                                <img src="image/profiles/f2.png" alt="Profile 3" class="profile-option" data-image="image/profiles/f2.png">
                             </div>
+                            
+                            <h3>Photo actuelle</h3>
+                            <img id="current-profile-pic" src="image/profiles/profil.png" alt="Votre photo de profil actuelle">
+                            
+                            <!-- Bouton pour sauvegarder -->
+                            <button id="saveProfilePicture">Sauvegarder</button>
                         </div>
                     </div>
                 </div>
