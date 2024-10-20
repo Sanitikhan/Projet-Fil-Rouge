@@ -19,11 +19,11 @@ body {
 }
 
 .fond {
-    display: flex;
-    margin: 1em;
-    border-radius: 15px;
-    background-color: #ffffff31;
-    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.123);
+  display: flex;
+  margin: 1em;
+  border-radius: 15px;
+  background-color: #ffffff31;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.123);
 }
 
 navbar {
@@ -69,9 +69,9 @@ navbar .active {
     color: #F0BBB4;
 }
 navbar .footer-navbar {
-    margin-top: 2em;
-    display: flex;
-    gap: 1em;
+  display: flex;
+  margin-top: auto;
+  gap: 1em;
 }
 navbar .footer-navbar svg {
     width: 1.5em;
