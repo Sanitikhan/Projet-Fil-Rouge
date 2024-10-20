@@ -1,3 +1,26 @@
+function updateProfilePictureInJSON(email, newProfilePicture) {
+    fetch('../src/json/connexion.json', {
+        method: 'PATCH', // ou POST, selon votre backend
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ email: email, profilePicture: newProfilePicture })
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Erreur lors de la mise à jour de la photo de profil');
+        }
+        return response.json();
+    })
+    .then(data => {
+        console.log('Photo de profil mise à jour:', data);
+    })
+    .catch(error => {
+        console.error('Erreur:', error);
+    });
+}
+
+
 document.addEventListener('DOMContentLoaded', function() {
     const profilePictures = document.querySelectorAll('.profile-option');
     const currentProfilePic = document.getElementById('current-profile-pic');
@@ -11,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function() {
     if (loggedInUser && loggedInUser.profilePicture) {
         currentProfilePic.src = loggedInUser.profilePicture;
     } else {
-        currentProfilePic.src = '../image/profil.png';  // photo de profil par défaut
+        currentProfilePic.src = '../image/profiles/profil.png';  // photo de profil par défaut
     }
 
     let selectedPicture = loggedInUser.profilePicture;  // Par défaut, la photo actuelle
@@ -26,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
     // Annuler le choix de la photo de profil
     cancelButton.addEventListener('click', function() {
-        selectedPicture = loggedInUser?.profilePicture || '../image/profil.png';  // Revenir à la photo actuelle
+        selectedPicture = loggedInUser?.profilePicture || 'image/profiles/profil.png';  // Revenir à la photo actuelle
         currentProfilePic.src = selectedPicture;  // Mettre à jour l'affichage
     });
     });
@@ -39,8 +62,8 @@ document.addEventListener('DOMContentLoaded', function() {
             // Mettre à jour les données dans le localStorage
             localStorage.setItem('loggedInUser', JSON.stringify(loggedInUser));
 
-            // Émettre un événement personnalisé pour indiquer que la photo de profil a changé
-            window.dispatchEvent(new Event('profilePictureChanged'));
+            // Mettre à jour la photo de profil dans le fichier JSON
+            updateProfilePictureInJSON(loggedInUser.email, selectedPicture);
 
             alert('Photo de profil sauvegardée avec succès !');
         } else {
@@ -59,8 +82,18 @@ document.addEventListener('DOMContentLoaded', function() {
         if (loggedInUser && loggedInUser.profilePicture) {
             profileImage.src = loggedInUser.profilePicture;
         } else {
-            profileImage.src = '../image/profil.png';  // photo de profil par défaut
+            profileImage.src = '../image/profiles/profil.png';  // photo de profil par défaut
         }
+    }
+
+    // Charger l'utilisateur connecté à partir du localStorage
+    const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
+
+    // Afficher la photo de profil actuelle (si définie)
+    if (loggedInUser && loggedInUser.profilePicture) {
+        profileImage.src = loggedInUser.profilePicture; // Mettre à jour la source de l'image
+    } else {
+        profileImage.src = '../image/profiles/profil.png'; // photo de profil par défaut
     }
 
     // Mettre à jour l'image de profil au chargement de la page

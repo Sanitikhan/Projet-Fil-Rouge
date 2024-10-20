@@ -3,12 +3,22 @@
         {
             "email": "john@example.com",
             "password": "john123",
-            "profilePicture": ""
+            "profilePicture": "../../image/profiles/h3.png"
         },
         {
             "email": "jane@example.com",
-            "password": "hashedpassword",
-            "profilePicture": ""
+            "password": "jane123",
+            "profilePicture": "../../image/profiles/f4.png"
+        },
+        {
+            "email": "bob@example.com",
+            "password": "bob123",
+            "profilePicture": "../../image/profiles/h5.png"
+        },
+        {
+            "email": "beatrice@example.com",
+            "password": "bea123",
+            "profilePicture": "../../image/profiles/f1.png"
         }
     ]
 }
