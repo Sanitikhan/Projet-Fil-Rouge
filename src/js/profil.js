@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const profilePictures = document.querySelectorAll('.profile-option');
     const currentProfilePic = document.getElementById('current-profile-pic');
     const saveButton = document.getElementById('saveProfilePicture');
+    const cancelButton = document.getElementById('cancelProfilePicture');
 
     // Charger l'utilisateur connecté à partir du localStorage
     const loggedInUser = JSON.parse(localStorage.getItem('loggedInUser'));
@@ -21,6 +22,13 @@ document.addEventListener('DOMContentLoaded', function() {
             selectedPicture = this.dataset.image;  // Mettre à jour l'image sélectionnée
             currentProfilePic.src = selectedPicture;  // Prévisualiser la photo sélectionnée
         });
+
+        
+    // Annuler le choix de la photo de profil
+    cancelButton.addEventListener('click', function() {
+        selectedPicture = loggedInUser?.profilePicture || '../image/profil.png';  // Revenir à la photo actuelle
+        currentProfilePic.src = selectedPicture;  // Mettre à jour l'affichage
+    });
     });
 
     // Sauvegarder la photo de profil

@@ -6,7 +6,7 @@
     <title>R☆NA</title>
     <link rel="icon" href="image/logo.png" type="image/png">
     <link rel="stylesheet" href="index.css">
-    
+    <link rel="stylesheet" href="src/css/profil.css">
 </head>
 <body>
     <div class="container">
@@ -17,7 +17,7 @@
                 </div>
                 <div class="pages">
                     <div class="page1">
-                        <a href="index.html" class="active">
+                        <a href="index.html">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M575.8 255.5c0 18-15 32.1-32 32.1l-32 0 .7 160.2c0 2.7-.2 5.4-.5 8.1l0 16.2c0 22.1-17.9 40-40 40l-16 0c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1L416 512l-24 0c-22.1 0-40-17.9-40-40l0-24 0-64c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32 14.3-32 32l0 64 0 24c0 22.1-17.9 40-40 40l-24 0-31.9 0c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2l-16 0c-22.1 0-40-17.9-40-40l0-112c0-.9 0-1.9 .1-2.8l0-69.7-32 0c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"/></svg>
                             Moodboard
                         </a>
@@ -47,7 +47,7 @@
 
                 <div class="row footer-navbar">
                     <div class="profil">
-                        <a href="profil.html">
+                        <a href="profil.html" class="active">
                         <img id="profileImage" src="" alt="Profile Picture" class="profile-pic">
                         </a>
                     </div>
@@ -62,61 +62,42 @@
                 </div>
             </navbar>
 
-            <div class= col>
-                <div class="row fond">
-                    <div class="zone-calendrier">
-                        <div class="row zone-button">
-                            <button class="ajouter-tache">
-                                Ajouter une tâche
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M362.7 19.3L314.3 67.7 444.3 197.7l48.4-48.4c25-25 25-65.5 0-90.5L453.3 19.3c-25-25-65.5-25-90.5 0zm-71 71L58.6 323.5c-10.4 10.4-18 23.3-22.2 37.4L1 481.2C-1.5 489.7 .8 498.8 7 505s15.3 8.5 23.7 6.1l120.3-35.4c14.1-4.2 27-11.8 37.4-22.2L421.7 220.3 291.7 90.3z"/></svg>
-                            </button>
+            <div class="row">
+                <div class="col">
+                    <div class="zone-profil">
+                        <div class="title-profil">
+                            <h2>Mon profil</h2>
                         </div>
-                        <div class="calendar">
-                            <div class="row header">
-                                <button class="prev-year">Année précédente</button>
-                                <button class="prev-month">Mois précédent</button>
-                                <span class="month-year"></span>
-                                <button class="next-month">Mois prochain</button>
-                                <button class="next-year">Année prochaine</button>
-                            </div>
-                            <table class="row calendar-table">
-                                <thead>
-                                    <tr>
-                                        <th>Dim</th>
-                                        <th>Lun</th>
-                                        <th>Mar</th>
-                                        <th>Mer</th>
-                                        <th>Jeu</th>
-                                        <th>Ven</th>
-                                        <th>Sam</th>
-                                    </tr>
-                                </thead>
-                                <tbody class="calendar-body">
-                                    <!-- Les jours du calendrier seront insérés ici par JavaScript -->
-                                </tbody>
-                            </table>
-                        </div>
-                        
-                    </div>
-                </div>
+                            <h3>Choisissez une photo de profil</h3>
 
-                <div class="row fond">
-                    <div class="col fond">
-                        <div class="liste">
-                            <p>La liste</p>
-                        </div>
-                    </div>
-                    <div class="col fond">
-                        <div class="statistiques">
-                            <p>Les statistiques</p>
-                        </div>
+                            <div id="profile-options">
+                                <img src="image/profiles/h2.png" alt="Profile 1" class="profile-option" data-image="image/profiles/h2.png">
+                                <img src="image/profiles/f5.png" alt="Profile 2" class="profile-option" data-image="image/profiles/f5.png">
+                                <img src="image/profiles/h1.png" alt="Profile 3" class="profile-option" data-image="image/profiles/h1.png">
+                                <img src="image/profiles/f2.png" alt="Profile 4" class="profile-option" data-image="image/profiles/f2.png">
+                                <img src="image/profiles/f3.png" alt="Profile 5" class="profile-option" data-image="image/profiles/f3.png">
+                                <img src="image/profiles/f4.png" alt="Profile 6" class="profile-option" data-image="image/profiles/f4.png">
+                                <img src="image/profiles/h4.png" alt="Profile 7" class="profile-option" data-image="image/profiles/h4.png">
+                                <img src="image/profiles/h3.png" alt="Profile 8" class="profile-option" data-image="image/profiles/h3.png">
+                                <img src="image/profiles/h5.png" alt="Profile 9" class="profile-option" data-image="image/profiles/h5.png">
+                                <img src="image/profiles/f1.png" alt="Profile 10" class="profile-option" data-image="image/profiles/f1.png">
+                                
+                            </div>
+                            
+                            <h3>Photo actuelle</h3>
+                            <img id="current-profile-pic" src="image/profiles/profil.png" alt="Votre photo de profil actuelle">
+                            
+                            <div class="zone-boutons">
+                                <button id="saveProfilePicture">Sauvegarder</button>
+                                <button id="cancelProfilePicture">Annuler le choix</button>
+                            </div>
                     </div>
                 </div>
             </div>
 
         </div>
     </div>
-    <script src="src/js/calendrier.js"></script>
+    
     <script src="src/js/profil.js"></script>
 </body>
 </html>

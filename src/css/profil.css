@@ -1,0 +1,20 @@
+.zone-profil {
+    background-color: #F7E9DE;
+    border-radius: 15px;
+    padding: 1em;
+    display: flexbox;
+    justify-content: center;
+    text-align: center;
+    margin: 2em;
+}
+.zone-profil img {
+    width: 4em;
+    cursor: pointer;
+}
+.zone-profil .zone-boutons {
+    margin: 1em;
+}
+.zone-profil .zone-boutons button {
+    padding: 0.5em;
+    border-radius: 15px;
+}

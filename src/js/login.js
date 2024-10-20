@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const loginForm = document.getElementById('loginForm');
 
     // Chargement des utilisateurs à partir du fichier JSON
-    fetch('../src/json/connexion.json')
+    fetch('../src/json/profil.json')
         .then(response => response.json())
         .then(data => {
             const users = data.users;
