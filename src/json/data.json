@@ -2,20 +2,39 @@
     "groups": [
         {
             "id": "card1",
-            "name": "Group 1",
-            "description": "Description",
+            "name": "Groupe 1",
+            "description": "Production d'une application",
+            "deadline" : "2024-11-06",
             "tasks": [
                 {
-                    "title": "Tâche 1",
-                    "description": "Description de la tâche 1",
+                    "title": "Faire une réunion",
+                    "description": "Prendre un temps pour décider des tâches de chacun",
+                    "deadline": "2024-10-10T23:59:00",
+                    "completed": true
+                },
+                {
+                    "title": "Effectuer un prototype",
+                    "description": "Permettre de visualiser le rendu du projet",
+                    "deadline": "2024-10-11T18:00:00",
+                    "completed": true
+                },
+                {
+                    "title": "Coder le projet",
+                    "description": "Faire le front-end et le back-end du projet",
                     "deadline": "2024-10-30T23:59:00",
                     "completed": false
                 },
                 {
-                    "title": "Tâche 2",
-                    "description": "Description de la tâche 2",
-                    "deadline": "2024-11-15T18:00:00",
-                    "completed": true
+                    "title" : "Perfectionner le travail",
+                    "description": "Vérifier chaque détail du projet avant la présentation",
+                    "deadline": "2024-11-05T15:00:00",
+                    "completed" : false
+                },
+                {
+                    "title" : "Présenter le projet",
+                    "description" : "Présenter le travail au client",
+                    "deadline" : "2024-11-06T23:59:00",
+                    "completed": false
                 }
             ],
             "completed" : false,
@@ -32,8 +51,9 @@
         },
         {
             "id": "card2",
-            "name": "Group 2",
+            "name": "Groupe 2",
             "description": "Description",
+            "deadline": "2024-11-05",
             "tasks": [
                 {
                     "title": "Tâche 1",
@@ -55,6 +75,48 @@
                 },
                 {
                     "name": "Alice",
+                    "role": "Développeur"
+                }
+            ]
+        },
+        {
+            "id": "card3",
+            "name": "Groupe 3",
+            "description": "Description",
+            "deadline": "2024-10-30",
+            "tasks": [
+                {
+                    "title": "Tâche 1",
+                    "description": "Description de la tâche 1",
+                    "deadline": "2024-10-30T23:59:00",
+                    "completed": false
+                },
+                {
+                    "title": "Tâche 2",
+                    "description": "Description de la tâche 2",
+                    "deadline": "2024-11-15T18:00:00",
+                    "completed": true
+                },
+                {
+                    "title": "Tâche 3",
+                    "description": "Description de la tâche 1",
+                    "deadline": "2024-10-30T23:59:00",
+                    "completed": true
+                },
+                {
+                    "title": "Tâche 4",
+                    "description": "Description de la tâche 2",
+                    "deadline": "2024-11-15T18:00:00",
+                    "completed": true
+                }
+            ],
+            "members": [
+                {
+                    "name": "Beatrice",
+                    "role": "Manager"
+                },
+                {
+                    "name": "Marie",
                     "role": "Développeur"
                 }
             ]

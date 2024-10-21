@@ -45,7 +45,7 @@
                     </div>
                 </div>
 
-                <div class=" footer-navbar">
+                <div class="footer-navbar">
                     <div class="profil">
                         <a href="profil.html">
                         <img id="profileImage" src="" alt="Profile Picture" class="profile-pic">
@@ -116,17 +116,43 @@
         <!-- Modal content -->
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2>Afficher les données</h2>
-            <p id="nomGroup">Nom du groupe</p>
-            <input type="text" class="form-title" id="title-group">
+            <h3>Les données</h3>
+            <div class="col form-modal">
+                <div id="nomGroup">
+                    <label>Nom du groupe:</label>
+                    <div id="title-group" class="data-display"></div>
+                </div>
+                <div id="descriptionGroup">
+                    <label>Description du groupe:</label>
+                    <div id="description-group" class="data-display"></div>
+                </div>
                 <div id="membresGroup">
-                    <p>Membres de mon groupe</p>
-                    <input type="text" class="form-members" id="members-group">
+                    <label>Membres du groupe:</label>
+                    <div id="members-group" class="data-display"></div>
                 </div>
                 <div id="statsGroup">
-                    <p>Statistiques du groupe</p>
-                    <input type="text" class="form-stats" id="stats-group">
+                    <label>Statistiques du groupe:</label>
+                    <div id="stats-group" class="data-display"></div>
                 </div>
+            </div>
+
+            <div id="taskContainer" class="taskContainer"></div>
+            <div class="addTaskContainer">
+                <h4>Ajouter une nouvelle tâche</h4>
+                <div id="addTaskForm" class="addTaskForm">
+                    <label for="newTaskTitle">Titre de la tâche :
+                    <input type="text" id="newTaskTitle" placeholder="Titre de la tâche"></label>
+                    
+                    <label for="newTaskDescription">Description de la tâche :
+                    <input type="text" id="newTaskDescription" placeholder="Description de la tâche"></label>
+                    
+                    <label for="newTaskDeadline">Date limite :
+                    <input type="datetime-local" id="newTaskDeadline"></label>
+
+                    <button id="addTaskButton">Ajouter tâche</button>
+                </div>
+            </div>
+
         </div>
     </div>
 
@@ -135,23 +161,27 @@
         <!-- Modal content -->
         <div class="modal-content">
             <span class="close">&times;</span>
-            <h2>Modifier les données</h2>
-            <div id="nomGroup">
-                <label id="nomGroup">Nom du groupe</label>
-            <input type="text" class="form-title" id="title-group">
+            <h3>Modifier les données</h3>
+            <div class="col form-modal">
+                <div id="nomGroup">
+                    <label id="nomGroup">Nom du groupe
+                    <input type="text" class="form-title" id="title-group"></label>
+                </div>
+                <div id="descriptionGroup">
+                    <label id="descriptionGroup">Description du groupe
+                    <input type="text" id="description-group"></label>
+                </div>
+                <div id="membresGroup">
+                    <label>Membres du groupe
+                    <input type="text" id="members-group"></label>
+                </div>
+                <div id="statsGroup">
+                    <label>Statistiques du groupe :</label>
+                </div>
+                <div class="submit-button">
+                    <button type="submit" id="modifierSubmit">Modifier</button>
+                </div>
             </div>
-            <div id="descriptionGroup">
-                <label id="descriptionGroup">Description du groupe</label>
-                <input type="text" id="description-group">
-            </div>
-            <div id="membresGroup">
-                <label>Membres du groupe</label>
-                <input type="text" id="members-group">
-            </div>
-            <div id="statsGroup">
-                <label>Statistiques du groupe</label>
-            </div>
-            <button type="submit" id="modifierSubmit">Modifier</button>
         </div>
     </div>
 
@@ -159,6 +189,7 @@
     <div id="supprimerModal" class="modal">
         <!-- Modal content -->
         <div class="modal-content">
+            <!--
             <span class="close">&times;</span>
             <h1>Modifier les données</h1>
             <p id="nomGroup">Nom du groupe</p>
@@ -171,6 +202,7 @@
                     <p>Statistiques du groupe</p>
                     <input type="text" class="form-stats" id="stats-group">
                 </div>
+            -->
         </div>
     </div>
 
@@ -178,12 +210,16 @@
     <div id="addGroupModal" class="modal">
         <div class="modal-content">
             <span class="close" onclick="closeAddGroupModal()">&times;</span>
-            <h1>Ajouter un nouveau groupe</h1>
-            <input type="text" id="newGroupName" placeholder="Nom du groupe" required>
-            <input type="text" id="newGroupDescription" placeholder="Description du groupe" required>
-            <input type="date" id="newGroupDeadline" placeholder="Deadline" required>
-            <input type="text" id="newGroupMembers" placeholder="Membres (séparés par des virgules)" required>
-            <button onclick="addNewGroup()">Ajouter</button>
+            <h3>Ajouter un nouveau groupe</h3>
+            <div class="form-modal">
+                <input type="text" id="newGroupName" placeholder="Nom du groupe" required>
+                <input type="text" id="newGroupDescription" placeholder="Description du groupe" required>
+                <input type="date" id="newGroupDeadline" placeholder="Deadline" required>
+                <input type="text" id="newGroupMembers" placeholder="Membres (séparés par des virgules)" required>
+                <div class="submit-button">
+                    <button onclick="addNewGroup()">Ajouter</button>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -192,5 +228,6 @@
     <script src="src/js/taches.js"></script>
     <script src="src/js/popup.js"></script>
     <script src="src/js/profil.js"></script>
+    <script src="src/js/logout.js"></script>
 </body>
 </html>

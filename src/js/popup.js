@@ -5,10 +5,6 @@ var modifierModal = document.getElementById("modifierModal");
 // Récupérer les éléments <span> qui ferment les modals
 var closeBtns = document.getElementsByClassName("close");
 
-// Ouvrir le premier modal (par exemple au clic d'un bouton)
-function openAfficherModal() {
-    afficherModal.style.display = "flex";
-}
 
 // Ouvrir le deuxième modal (par exemple au clic d'un autre bouton)
 function openModifierModal() {

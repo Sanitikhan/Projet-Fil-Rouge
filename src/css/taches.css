@@ -14,11 +14,13 @@
 }
 .card-content {
     padding-top: 0 !important;
-    padding: 1em;
+    padding: 2em;
+    color: #F15F61;
+    font-size: 0.8em;
 }
 .card-title p {
     color: #F15F61;
-    font-size: 2em;
+    font-size: 1.5em;
     font-weight: 900;
     margin: 0;
 }
@@ -113,47 +115,123 @@
     margin: 0;
 }
 
-.zone-membres p {
-    font-size: 0.3em;
-}
-
-/* The Modal (background) */
 .modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
+    display: none;
+    position: fixed;
+    z-index: 1;
     left: 0;
     top: 0;
-    width:  100%;
+    width: 100%;
     height: auto;
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.258);
+}
   
-  /* Modal Content/Box */
-  .modal-content {
-    display: flexbox;
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 30px;
+.modal-content {
+    background-color: #F7E9DE;
+    margin: 1% auto;
+    padding: 20px;
     border: 1px solid #888;
     border-radius: 15px;
-  }
-  .modal-content button {
+    color: #F15F61;
+    font-size: 1em;
+    font-weight: 600;
+}
+.modal-content h3 {
+    text-align: center;
+}
+.modal-content .form-modal {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
     margin: 1em;
-  }
-  
-  /* The Close Button */
-  .close {
-    color: #aaa;
+    padding: 0.5em;
+    background-color: #F0BBB4;
+    border-radius: 15px;
+}
+.modal-content input {
+    background-color: #F7E9DE;
+    border: 2px solid #F15F61;
+    border-radius: 15px;
+    color: #F15F61;
+    padding: 1em;
+}
+::placeholder {
+    color: #F15F61;
+}
+.modal-content .submit-button {
+    display: flex;
+    justify-content: center;
+    margin: 0.5em;
+}
+.modal-content .submit-button button {
+    padding: 1em 2em 1em 2em;
+    border-radius: 15px;
+    font-weight: 800;
+}
+.modal-content .close {
+    color: #F0BBB4;
     float: right;
-    font-size: 28px;
+    font-size: 2em;
     font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: black;
+}
+.modal-content .close:hover,
+.modal-content .close:focus {
+    color: #F15F61;
     text-decoration: none;
     cursor: pointer;
-  }
+}
+
+
+.taskContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1em;
+    margin: 1em;
+    padding: 0.5em;
+    background-color: #F0BBB4;
+    border-radius: 15px;
+}
+
+.collapsible {
+    background-color: #ffffff2c;
+    border-radius: 15px;
+    color: #F15F61;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 1em;
+    margin-bottom: 5px;
+}
+
+.collapsible.active, .collapsible:hover {
+    background-color: #ffffff51;
+    color: #F7E9DE;
+}
+
+/* Style for the content section inside the collapsible */
+.content {
+    padding: 0 18px;
+    display: none;
+    overflow: hidden;
+    margin-bottom: 10px;
+}
+
+.addTaskContainer h4 {
+    text-align: center;
+}
+.addTaskForm {
+    display: flex;
+    gap: 1em;
+    margin: 1em;
+    padding: 0.5em;
+    background-color: #F0BBB4;
+    border-radius: 15px;
+}
+.addTaskForm button {
+    padding: 0.7em 2em 0.7em 2em;
+    border-radius: 15px;
+}
