@@ -2,8 +2,6 @@ const monthYearElement = document.querySelector('.month-year');
 const calendarBody = document.querySelector('.calendar-body');
 const prevMonthBtn = document.querySelector('.prev-month');
 const nextMonthBtn = document.querySelector('.next-month');
-const prevYearBtn = document.querySelector('.prev-year');
-const nextYearBtn = document.querySelector('.next-year');
 
 let currentDate = new Date();
 
@@ -59,15 +57,5 @@ prevMonthBtn.addEventListener('click', () => {
 
 nextMonthBtn.addEventListener('click', () => {
     currentDate.setMonth(currentDate.getMonth() + 1);
-    renderCalendar(currentDate);
-});
-
-prevYearBtn.addEventListener('click', () => {
-    currentDate.setFullYear(currentDate.getFullYear() - 1);
-    renderCalendar(currentDate);
-});
-
-nextYearBtn.addEventListener('click', () => {
-    currentDate.setFullYear(currentDate.getFullYear() + 1);
     renderCalendar(currentDate);
 });

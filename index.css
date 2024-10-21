@@ -52,21 +52,21 @@ navbar a {
     font-weight: 800;
 }
 navbar a:hover {
-    color: #F15F61;
-    background-color: #F0BBB4;
-    fill: #F15F61 !important;
+  color: #F15F61;
+  background-color: #F0BBB4;
+  fill: #F15F61 !important;
 }
 navbar .pages a svg {
-    width: 1.5em;
-    margin-right: 1em;
-    fill: #F15F61;
+  width: 1.5em;
+  margin-right: 1em;
+  fill: #F15F61;
 }
 navbar .active svg {
   fill: #F0BBB4 !important;
 }
 navbar .active {
-    background-color: #F15F61;
-    color: #F0BBB4;
+  background-color: #F15F61;
+  color: #F0BBB4;
 }
 navbar .footer-navbar {
   display: flex;
@@ -74,29 +74,19 @@ navbar .footer-navbar {
   gap: 1em;
 }
 navbar .footer-navbar svg {
-    width: 1.5em;
-    fill: #F15F61;
+  width: 1.5em;
+  fill: #F15F61;
 }
 navbar .profil img {
     width: 2.5em;
+}
+navbar .logout {
+  cursor: pointer;
 }
 navbar .fermer-sidebar {
   display: flex;
   margin-left: auto;
 }
-
-.zone-logout {
-  background-color: #F7E9DE;
-  border-radius: 15px;
-  padding: 1em;
-  justify-content: flex-end;
-}
-
-.logout-button button {
-  padding: 0.7em;
-  border-radius: 15px;
-}
-
 .zone-calendrier {
   background-color: #F7E9DE;
   border-radius: 15px;
@@ -110,53 +100,50 @@ navbar .fermer-sidebar {
   background-color: #F15F61;
   border-radius: 15px;
   margin-left: auto;
+  margin-bottom: 1em;
 }
 .ajouter-tache svg {
   width: 1em;
   fill: #F0BBB4;
 }
 .calendar {
-  margin: 1em;
+  margin: 0.2em;
 }
-
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 10px;
+  margin-bottom: 0.2em;
   gap: 1em;
 }
 .header button {
   border-radius: 15px;
   padding: 0.7em;
 }
-
 .calendar-table {
   width: 100%;
   border-collapse: collapse;
+  font-size: 10px;
 }
-
 .calendar-table th, .calendar-table td {
-  padding: 0.3em;
+  padding: 0.2em;
   text-align: center;
 }
-
 .calendar-table td.current-day {
   background-color: #F15F61;
   color: #F0BBB4;
   font-weight: bold;
   border-radius: 15px;
 }
-
 button {
   padding: 5px;
   background-color: #F15F61;
   color: #F0BBB4;
-  font-weight: bold;
+  font-size: 10px;
+  font-weight: 700;
   border: none;
   cursor: pointer;
 }
-
 button:hover {
   background-color: #F0BBB4;
   color: #F15F61;
