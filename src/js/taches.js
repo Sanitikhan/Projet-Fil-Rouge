@@ -221,7 +221,7 @@ function openAfficherModal(groupId) {
 
             taskElement.innerHTML = `
                 <button class="collapsible">${task.title}</button>
-                <div class="content">
+                <div class="dropdown-content">
                     <p>Description: ${task.description}</p>
                     <p>Deadline: ${new Date(task.deadline).toLocaleString()}</p>
                     <p>Status: ${task.completed ? 'Complétée' : 'Non Complétée'}</p>
@@ -239,7 +239,7 @@ function openAfficherModal(groupId) {
         addTaskButton.onclick = () => addTaskToGroup(groupId);
 
         // Afficher le modal
-        document.getElementById('afficherModal').style.display = 'flex';
+        document.getElementById('afficherModal').style.display = 'block';
     }
 }
 
@@ -262,6 +262,7 @@ function initializeCollapsible() {
         });
     });
 }
+
 
 
 // Fonction pour ajouter une tâche à un groupe

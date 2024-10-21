@@ -117,44 +117,52 @@
         <div class="modal-content">
             <span class="close">&times;</span>
             <h3>Les données</h3>
-            <div class="col form-modal">
-                <div id="nomGroup">
-                    <label>Nom du groupe:</label>
-                    <div id="title-group" class="data-display"></div>
+            
+            <div class="modal-body">
+                <div class="col form-modal">
+                    <div id="nomGroup">
+                        <label>Nom du groupe:</label>
+                        <div id="title-group" class="data-display"></div>
+                    </div>
+                    <div id="descriptionGroup">
+                        <label>Description du groupe:</label>
+                        <div id="description-group" class="data-display"></div>
+                    </div>
+                    <div id="membresGroup">
+                        <label>Membres du groupe:</label>
+                        <div id="members-group" class="data-display"></div>
+                    </div>
+                    <div id="statsGroup">
+                        <label>Statistiques du groupe:</label>
+                        <div id="stats-group" class="data-display"></div>
+                    </div>
                 </div>
-                <div id="descriptionGroup">
-                    <label>Description du groupe:</label>
-                    <div id="description-group" class="data-display"></div>
-                </div>
-                <div id="membresGroup">
-                    <label>Membres du groupe:</label>
-                    <div id="members-group" class="data-display"></div>
-                </div>
-                <div id="statsGroup">
-                    <label>Statistiques du groupe:</label>
-                    <div id="stats-group" class="data-display"></div>
+
+                <div class="task-section">
+                    <div id="taskContainer" class="taskContainer"></div>
+                    <div class="addTaskContainer">
+                        <h4>Ajouter une nouvelle tâche</h4>
+                        <div id="addTaskForm" class="addTaskForm">
+                            <label for="newTaskTitle">Titre de la tâche :
+                                <input type="text" id="newTaskTitle" placeholder="Titre de la tâche">
+                            </label>
+                            
+                            <label for="newTaskDescription">Description de la tâche :
+                                <input type="text" id="newTaskDescription" placeholder="Description de la tâche">
+                            </label>
+                            
+                            <label for="newTaskDeadline">Date limite :
+                                <input type="datetime-local" id="newTaskDeadline">
+                            </label>
+
+                            <button id="addTaskButton">Ajouter tâche</button>
+                        </div>
+                    </div>
                 </div>
             </div>
-
-            <div id="taskContainer" class="taskContainer"></div>
-            <div class="addTaskContainer">
-                <h4>Ajouter une nouvelle tâche</h4>
-                <div id="addTaskForm" class="addTaskForm">
-                    <label for="newTaskTitle">Titre de la tâche :
-                    <input type="text" id="newTaskTitle" placeholder="Titre de la tâche"></label>
-                    
-                    <label for="newTaskDescription">Description de la tâche :
-                    <input type="text" id="newTaskDescription" placeholder="Description de la tâche"></label>
-                    
-                    <label for="newTaskDeadline">Date limite :
-                    <input type="datetime-local" id="newTaskDeadline"></label>
-
-                    <button id="addTaskButton">Ajouter tâche</button>
-                </div>
-            </div>
-
         </div>
     </div>
+
 
     <!-- The Modal -->
     <div id="modifierModal" class="modal">

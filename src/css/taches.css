@@ -126,11 +126,18 @@
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.258);
 }
-  
+.modal-body {
+    display: flex;
+    justify-content: space-between;
+}
+.form-modal, .task-section {
+    width: 50%;
+}
 .modal-content {
     background-color: #F7E9DE;
     margin: 1% auto;
     padding: 20px;
+    max-width: 800px;
     border: 1px solid #888;
     border-radius: 15px;
     color: #F15F61;
@@ -141,15 +148,23 @@
     text-align: center;
 }
 .modal-content .form-modal {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 1em;
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
     margin: 1em;
     padding: 0.5em;
     background-color: #F0BBB4;
     border-radius: 15px;
 }
+
 .modal-content input {
+    background-color: #F7E9DE;
+    border: 2px solid #F15F61;
+    border-radius: 15px;
+    color: #F15F61;
+    padding: 1em;
+}
+.modal-content textarea {
     background-color: #F7E9DE;
     border: 2px solid #F15F61;
     border-radius: 15px;
@@ -186,13 +201,12 @@
 .taskContainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 1em;
+    gap: 0.5em;
     margin: 1em;
     padding: 0.5em;
     background-color: #F0BBB4;
     border-radius: 15px;
 }
-
 .collapsible {
     background-color: #ffffff2c;
     border-radius: 15px;
@@ -206,18 +220,18 @@
     font-size: 1em;
     margin-bottom: 5px;
 }
-
 .collapsible.active, .collapsible:hover {
     background-color: #ffffff51;
     color: #F7E9DE;
 }
 
-/* Style for the content section inside the collapsible */
-.content {
-    padding: 0 18px;
+.taskContainer .dropdown-content {
     display: none;
     overflow: hidden;
     margin-bottom: 10px;
+    padding: 0.7em;
+    background-color: #F7E9DE;
+    border-radius: 15px;
 }
 
 .addTaskContainer h4 {
@@ -225,11 +239,16 @@
 }
 .addTaskForm {
     display: flex;
+    flex-direction: column;
     gap: 1em;
     margin: 1em;
     padding: 0.5em;
     background-color: #F0BBB4;
     border-radius: 15px;
+}
+.addTaskForm label {
+    display: flex;
+    flex-direction: column;
 }
 .addTaskForm button {
     padding: 0.7em 2em 0.7em 2em;
