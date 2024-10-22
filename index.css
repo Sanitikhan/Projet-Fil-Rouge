@@ -4,7 +4,6 @@
     font-style: none;
     text-decoration: none;
 }
-
 body {
 	margin: 0;
   width: 100%;
@@ -21,9 +20,11 @@ body {
 .fond {
   display: flex;
   margin: 1em;
+  max-height: fit-content;
   border-radius: 15px;
   background-color: #ffffff31;
   box-shadow: 0 2px 16px rgba(0, 0, 0, 0.123);
+  flex-grow: 1; /* Prendre tout l'espace restant */
 }
 
 navbar {
@@ -34,6 +35,7 @@ navbar {
     background-color: #F7E9DE;
     gap: 1.5em;
     border-radius: 15px;
+    height: 100%; /* Prendre 100% de la hauteur disponible */
 }
 navbar .logo .texte-logo {
   display: flex;
@@ -91,6 +93,7 @@ navbar .fermer-sidebar {
   background-color: #F7E9DE;
   border-radius: 15px;
   padding: 1em;
+  margin: 1em;
 }
 .ajouter-tache {
   display: flex;
@@ -114,7 +117,7 @@ navbar .fermer-sidebar {
   justify-content: space-between;
   align-items: center;
   margin-bottom: 0.2em;
-  gap: 1em;
+  gap: 1.5em;
 }
 .header button {
   border-radius: 15px;
@@ -123,23 +126,26 @@ navbar .fermer-sidebar {
 .calendar-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 10px;
+  font-size: 15px;
+}
+.month-year {
+  font-weight: 700;
 }
 .calendar-table th, .calendar-table td {
-  padding: 0.2em;
+  padding: 0.5em;
   text-align: center;
 }
 .calendar-table td.current-day {
   background-color: #F15F61;
   color: #F0BBB4;
-  font-weight: bold;
+  font-weight: 700;
   border-radius: 15px;
 }
 button {
   padding: 5px;
   background-color: #F15F61;
   color: #F0BBB4;
-  font-size: 10px;
+  font-size: 15px;
   font-weight: 700;
   border: none;
   cursor: pointer;
