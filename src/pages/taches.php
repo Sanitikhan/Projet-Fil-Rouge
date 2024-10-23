@@ -20,8 +20,53 @@ $profilePicture = $user['profile_picture'] ?: '../../image/profil.png';
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>R☆NA</title>
     <link rel="icon" href="../../image/logo.png" type="image/png">
-    <link rel="stylesheet" href="../../index.css">
     <link rel="stylesheet" href="../css/taches.css">
+    <link rel="stylesheet" href="../../index.css">
+    <style>
+        .group {
+            background-color: #F7E9DE;
+            border-radius: 15px;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        .task {
+            margin: 5px 0;
+        }
+        .completed {
+            text-decoration: line-through;
+            color: gray;
+        }
+        #groupModal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding-top: 60px;
+        }
+        .grayStyle {
+            color: gray;
+        }
+        button {
+            border-radius: 15px;
+            padding: 0.5em 1em 0.5em 1em;
+            margin: 0.5em;
+        }
+        h2 {
+        color: #EA785B;
+        }
+        input {
+            padding: 0.5em 1em 0.5em 1em;
+            background-color: #F7E9DE;
+            border: 1px solid #EA785B;
+            border-radius: 15px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -101,7 +146,7 @@ $profilePicture = $user['profile_picture'] ?: '../../image/profil.png';
                             </div>
                         </div>-->
 
-                        <div id="groupsContainer">
+                        <div id="groupsContainer" class="groupsContainer">
 
                         </div>
 
