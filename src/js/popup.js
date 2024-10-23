@@ -1,38 +1,113 @@
-// Get the modal
-var afficherModal = document.getElementById("afficherModal");
-var modifierModal = document.getElementById("modifierModal");
+// Récupérer le modal
+var modal = document.getElementById("myModal");
 
-// Récupérer les éléments <span> qui ferment les modals
-var closeBtns = document.getElementsByClassName("close");
+// Récupérer le bouton qui ouvre le modal
+var btn = document.getElementById("openModalBtn");
 
+// Récupérer l'élément <span> qui ferme le modal
+var span = document.getElementsByClassName("close")[0];
 
-// Ouvrir le deuxième modal (par exemple au clic d'un autre bouton)
-function openModifierModal() {
-    modifierModal.style.display = "flex";
+// Quand l'utilisateur clique sur le bouton, ouvrir le modal
+btn.onclick = function() {
+    modal.style.display = "block";
 }
 
-// Fermer les modals lorsque l'utilisateur clique sur <span> (x)
-for (var i = 0; i < closeBtns.length; i++) {
-    closeBtns[i].onclick = function() {
-        this.parentElement.parentElement.style.display = "none";
-    };
+// Quand l'utilisateur clique sur <span> (x), fermer le modal
+span.onclick = function() {
+    modal.style.display = "none";
 }
 
-// When the user clicks anywhere outside of the modal, close it
+// Quand l'utilisateur clique en dehors du modal, le fermer
 window.onclick = function(event) {
-  if (event.target == afficherModal) {
-    afficherModal.style.display = "none";
-  }
-}
-window.onclick = function(event) {
-    if (event.target == modifierModal) {
-      modifierModal.style.display = "none";
+    if (event.target == modal) {
+        modal.style.display = "none";
     }
 }
 
-function deleteCard(cardId) {
-    const card = document.getElementById(cardId);
-    if (card) {
-        card.remove();
-    }
+// Soumettre le formulaire
+document.getElementById("createGroupForm").onsubmit = function(e) {
+    e.preventDefault(); // Empêcher le rechargement de la page
+    // Logique pour créer le groupe ici
+
+    // Fermer le modal après soumission
+    modal.style.display = "none";
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  loadUsers(); // Charge les utilisateurs après le chargement du DOM
+});
+
+function loadUsers() {
+  fetch('../php/get_members.php')
+  .then(response => response.json())
+  .then(data => {
+      if (Array.isArray(data)) {
+          const membersSelect = document.getElementById('members');
+          membersSelect.innerHTML = ''; // Réinitialiser le contenu
+
+          data.forEach(user => {
+              const option = document.createElement('option');
+              option.value = user.id; // ID de l'utilisateur
+              option.textContent = user.name; // Nom de l'utilisateur
+              membersSelect.appendChild(option);
+          });
+      } else {
+          console.error('Expected an array, but got:', data);
+      }
+  })
+  .catch(error => {
+      console.error('There was a problem with the fetch operation:', error);
+  });
+}
+
+
+
+document.addEventListener('DOMContentLoaded', function() {
+  loadUsers();
+});
+
+
+// Quand l'utilisateur clique sur le bouton, ouvrir le modal et charger les utilisateurs
+btn.onclick = function() {
+  loadUsers(); // Charger les utilisateurs
+  modal.style.display = "block";
+}
+
+
+
+
+// Gérer la soumission du formulaire
+document.getElementById('createGroupForm').addEventListener('submit', function(event) {
+  event.preventDefault(); // Empêcher le comportement par défaut du formulaire
+
+  const groupName = document.getElementById('groupName').value;
+  const membersSelect = document.getElementById('members');
+  const members = Array.from(membersSelect.selectedOptions).map(option => option.value);
+
+  const data = {
+      groupName: groupName,
+      members: members,
+      created_by: userId,/* ID de l'utilisateur connecté */
+  };
+
+  fetch('../pages/taches.php', {
+      method: 'POST',
+      headers: {
+          'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+  })
+  .then(response => response.json())
+  .then(result => {
+      if (result.success) {
+          alert('Groupe créé avec succès');
+          // Ferme le modal ou fais autre chose ici
+      } else {
+          alert('Erreur lors de la création du groupe : ' + result.message);
+      }
+  })
+  .catch(error => {
+      console.error('Erreur:', error);
+  });
+});
+

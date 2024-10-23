@@ -9,6 +9,7 @@ $stmt = $pdo->prepare("SELECT profile_picture FROM Users WHERE id = :id");
 $stmt->execute(['id' => $userId]);
 $user = $stmt->fetch(PDO::FETCH_ASSOC);
 
+
 $profilePicture = $user['profile_picture'] ?: '../../image/profil.png';
 ?>
 
@@ -99,17 +100,45 @@ $profilePicture = $user['profile_picture'] ?: '../../image/profil.png';
                                 </div>
                             </div>
                         </div>-->
-                       <div class="card card-ajouter" id="ajouter-group" onclick="openAddGroupModal()">
+                       <button type="button" class="card card-ajouter" data-bs-toggle="modal" data-bs-target="#createGroupModal">
                             <div class="logo-ajouter">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#F15F61"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"/></svg>
                             </div>
-                       </div>
+                       </button>
+                       <!-- Bouton pour ouvrir le modal -->
+                        <button id="openModalBtn">Créer un Groupe</button>
+
                     </div>
                 </div>
             </div>
 
         </div>
     </div>
+
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Créer un Groupe</h2>
+            <form id="createGroupForm">
+                <div>
+                    <label for="groupName">Nom du Groupe :</label>
+                    <input type="text" id="groupName" required>
+                </div>
+                <div>
+                    <label for="members">Sélectionner des membres :</label>
+                    <select id="members" multiple required>
+                        <!-- Les options seront ajoutées ici par JavaScript -->
+                    </select>
+                </div>
+
+                <button type="submit">Créer le Groupe</button>
+            </form>
+        </div>
+    </div>
+
+
+
 
     <!-- The Modal -->
     <div id="afficherModal" class="modal">
@@ -232,10 +261,10 @@ $profilePicture = $user['profile_picture'] ?: '../../image/profil.png';
     </div>
 
 
+    <script>
+    const userId = <?php echo json_encode($userId); ?>; // Convertir en JSON pour s'assurer que c'est au bon format
+</script>
 
-    <script src="src/js/taches.js"></script>
-    <script src="src/js/popup.js"></script>
-    <script src="src/js/profil.js"></script>
-    <script src="src/js/logout.js"></script>
+    <script src="../js/popup.js"></script>
 </body>
 </html>

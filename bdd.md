@@ -35,13 +35,12 @@ CREATE TABLE Tasks (
     FOREIGN KEY (assigned_to) REFERENCES Users(id)
 );
 
-CREATE TABLE Group_Members (
-    id INT PRIMARY KEY AUTO_INCREMENT,
+CREATE TABLE GroupMembers (
     group_id INT,
     user_id INT,
-    role VARCHAR(50),
-    FOREIGN KEY (group_id) REFERENCES Groups(id),
-    FOREIGN KEY (user_id) REFERENCES Users(id)
+    PRIMARY KEY (group_id, user_id),
+    FOREIGN KEY (group_id) REFERENCES Groups(id) ON DELETE CASCADE,
+    FOREIGN KEY (user_id) REFERENCES Users(id) ON DELETE CASCADE
 );
 ```
 
