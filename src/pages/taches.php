@@ -32,7 +32,7 @@ $profilePicture = $user['profile_picture'] ?: '../../image/profil.png';
                 </div>
                 <div class="pages">
                     <div class="page1">
-                        <a href="index.html">
+                        <a href="moodboard.php">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M575.8 255.5c0 18-15 32.1-32 32.1l-32 0 .7 160.2c0 2.7-.2 5.4-.5 8.1l0 16.2c0 22.1-17.9 40-40 40l-16 0c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1L416 512l-24 0c-22.1 0-40-17.9-40-40l0-24 0-64c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32 14.3-32 32l0 64 0 24c0 22.1-17.9 40-40 40l-24 0-31.9 0c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2l-16 0c-22.1 0-40-17.9-40-40l0-112c0-.9 0-1.9 .1-2.8l0-69.7-32 0c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"/></svg>
                             Moodboard
                         </a>
@@ -100,164 +100,31 @@ $profilePicture = $user['profile_picture'] ?: '../../image/profil.png';
                                 </div>
                             </div>
                         </div>-->
-                       <button type="button" class="card card-ajouter" data-bs-toggle="modal" data-bs-target="#createGroupModal">
-                            <div class="logo-ajouter">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#F15F61"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"/></svg>
-                            </div>
-                       </button>
-                       <!-- Bouton pour ouvrir le modal -->
-                        <button id="openModalBtn">Créer un Groupe</button>
 
-                    </div>
-                </div>
-            </div>
+                        <div id="groupsContainer">
 
-        </div>
-    </div>
-
-    <!-- Modal -->
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Créer un Groupe</h2>
-            <form id="createGroupForm">
-                <div>
-                    <label for="groupName">Nom du Groupe :</label>
-                    <input type="text" id="groupName" required>
-                </div>
-                <div>
-                    <label for="members">Sélectionner des membres :</label>
-                    <select id="members" multiple required>
-                        <!-- Les options seront ajoutées ici par JavaScript -->
-                    </select>
-                </div>
-
-                <button type="submit">Créer le Groupe</button>
-            </form>
-        </div>
-    </div>
-
-
-
-
-    <!-- The Modal -->
-    <div id="afficherModal" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3>Les données</h3>
-            
-            <div class="modal-body">
-                <div class="col form-modal">
-                    <div id="nomGroup">
-                        <label>Nom du groupe:</label>
-                        <div id="title-group" class="data-display"></div>
-                    </div>
-                    <div id="descriptionGroup">
-                        <label>Description du groupe:</label>
-                        <div id="description-group" class="data-display"></div>
-                    </div>
-                    <div id="membresGroup">
-                        <label>Membres du groupe:</label>
-                        <div id="members-group" class="data-display"></div>
-                    </div>
-                    <div id="statsGroup">
-                        <label>Statistiques du groupe:</label>
-                        <div id="stats-group" class="data-display"></div>
-                    </div>
-                </div>
-
-                <div class="task-section">
-                    <div id="taskContainer" class="taskContainer"></div>
-                    <div class="addTaskContainer">
-                        <h4>Ajouter une nouvelle tâche</h4>
-                        <div id="addTaskForm" class="addTaskForm">
-                            <label for="newTaskTitle">Titre de la tâche :
-                                <input type="text" id="newTaskTitle" placeholder="Titre de la tâche">
-                            </label>
-                            
-                            <label for="newTaskDescription">Description de la tâche :
-                                <input type="text" id="newTaskDescription" placeholder="Description de la tâche">
-                            </label>
-                            
-                            <label for="newTaskDeadline">Date limite :
-                                <input type="datetime-local" id="newTaskDeadline">
-                            </label>
-
-                            <button id="addTaskButton">Ajouter tâche</button>
                         </div>
+
+                        <button type="button" class="card card-ajouter" id="openGroupModal">
+                                <div class="logo-ajouter">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" fill="#F15F61"><path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32l0 144L48 224c-17.7 0-32 14.3-32 32s14.3 32 32 32l144 0 0 144c0 17.7 14.3 32 32 32s32-14.3 32-32l0-144 144 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-144 0 0-144z"/></svg>
+                                </div>
+                        </button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-
-    <!-- The Modal -->
-    <div id="modifierModal" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3>Modifier les données</h3>
-            <div class="col form-modal">
-                <div id="nomGroup">
-                    <label id="nomGroup">Nom du groupe
-                    <input type="text" class="form-title" id="title-group"></label>
-                </div>
-                <div id="descriptionGroup">
-                    <label id="descriptionGroup">Description du groupe
-                    <input type="text" id="description-group"></label>
-                </div>
-                <div id="membresGroup">
-                    <label>Membres du groupe
-                    <input type="text" id="members-group"></label>
-                </div>
-                <div id="statsGroup">
-                    <label>Statistiques du groupe :</label>
-                </div>
-                <div class="submit-button">
-                    <button type="submit" id="modifierSubmit">Modifier</button>
-                </div>
-            </div>
-        </div>
+    <!-- Modal de création de groupe -->
+    <div id="groupModal" class="modal">
+    <div class="modal-content">
+        <span id="closeGroupModal" class="close">&times;</span>
+        <h2>Ajouter un Groupe</h2>
+        <label for="groupName">Nom du groupe:</label>
+        <input type="text" id="groupName" placeholder="Nom du Groupe" required>
+        <button onclick="addGroup()" class="buttonAddGroup">Ajouter Groupe</button>
     </div>
-
-    <!-- The Modal -->
-    <div id="supprimerModal" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
-            <!--
-            <span class="close">&times;</span>
-            <h1>Modifier les données</h1>
-            <p id="nomGroup">Nom du groupe</p>
-            <input type="text" class="form-title" id="title-group">
-                <div id="membresGroup">
-                    <p>Membres de mon groupe</p>
-                    <input type="text" class="form-members" id="members-group">
-                </div>
-                <div id="statsGroup">
-                    <p>Statistiques du groupe</p>
-                    <input type="text" class="form-stats" id="stats-group">
-                </div>
-            -->
-        </div>
-    </div>
-
-    <!-- Modal pour ajouter un groupe -->
-    <div id="addGroupModal" class="modal">
-        <div class="modal-content">
-            <span class="close" onclick="closeAddGroupModal()">&times;</span>
-            <h3>Ajouter un nouveau groupe</h3>
-            <div class="form-modal">
-                <input type="text" id="newGroupName" placeholder="Nom du groupe" required>
-                <input type="text" id="newGroupDescription" placeholder="Description du groupe" required>
-                <input type="date" id="newGroupDeadline" placeholder="Deadline" required>
-                <input type="text" id="newGroupMembers" placeholder="Membres (séparés par des virgules)" required>
-                <div class="submit-button">
-                    <button onclick="addNewGroup()">Ajouter</button>
-                </div>
-            </div>
-        </div>
     </div>
 
 

@@ -1,113 +1,150 @@
-// Récupérer le modal
-var modal = document.getElementById("myModal");
+// Ouvrir le modal
+document.getElementById('openGroupModal').onclick = function() {
+    document.getElementById('groupModal').style.display = 'block';
+};
+  
+// Fermer le modal
+document.getElementById('closeGroupModal').onclick = function() {
+    document.getElementById('groupModal').style.display = 'none';
+};
 
-// Récupérer le bouton qui ouvre le modal
-var btn = document.getElementById("openModalBtn");
+// Stockage des groupes
+let groups = [];
 
-// Récupérer l'élément <span> qui ferme le modal
-var span = document.getElementsByClassName("close")[0];
+// Fonction pour afficher les groupes et leurs tâches
+function renderGroups() {
+    const groupsContainer = document.getElementById('groupsContainer');
+    groupsContainer.innerHTML = ''; // Clear the container
 
-// Quand l'utilisateur clique sur le bouton, ouvrir le modal
-btn.onclick = function() {
-    modal.style.display = "block";
+    groups.forEach((group, groupIndex) => {
+        const groupElement = document.createElement('div');
+        groupElement.classList.add('group');
+
+        // Nom du groupe
+        const groupTitle = document.createElement('h2');
+        groupTitle.textContent = group.name;
+        groupElement.appendChild(groupTitle);
+
+        // Bouton pour supprimer le groupe
+        const deleteGroupButton = document.createElement('button');
+        deleteGroupButton.textContent = 'Supprimer le Groupe';
+        deleteGroupButton.onclick = () => deleteGroup(groupIndex);
+        groupElement.appendChild(deleteGroupButton);
+
+        // Tâches dans le groupe
+        group.tasks.forEach((task, taskIndex) => {
+            const taskElement = document.createElement('div');
+            taskElement.classList.add('task');
+            if (task.completed) taskElement.classList.add('completed');
+
+            // Checkbox pour cocher/décocher la tâche
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.checked = task.completed;
+            checkbox.onchange = () => toggleTaskCompletion(groupIndex, taskIndex);
+            taskElement.appendChild(checkbox);
+
+            // Titre de la tâche
+            const taskTitle = document.createElement('span');
+            taskTitle.textContent = task.title;
+            taskElement.appendChild(taskTitle);
+
+            // Bouton pour supprimer la tâche
+            const deleteButton = document.createElement('button');
+            deleteButton.textContent = 'Supprimer';
+            deleteButton.onclick = () => deleteTask(groupIndex, taskIndex);
+            taskElement.appendChild(deleteButton);
+
+            // Ajouter un commentaire
+            const commentBox = document.createElement('div');
+            commentBox.classList.add('comment-box');
+
+            const commentInput = document.createElement('input');
+            commentInput.type = 'text';
+            commentInput.placeholder = 'Ajouter un commentaire';
+            commentInput.value = task.comment || '';
+
+            commentInput.onblur = () => updateComment(groupIndex, taskIndex, commentInput.value);
+            commentBox.appendChild(commentInput);
+
+            taskElement.appendChild(commentBox);
+            groupElement.appendChild(taskElement);
+        });
+
+        // Ajouter une nouvelle tâche dans le groupe
+        const newTaskInput = document.createElement('input');
+        newTaskInput.type = 'text';
+        newTaskInput.placeholder = 'Nouvelle tâche';
+        groupElement.appendChild(newTaskInput);
+
+        const addTaskButton = document.createElement('button');
+        addTaskButton.textContent = 'Ajouter tâche';
+        addTaskButton.onclick = () => addTask(groupIndex, newTaskInput.value);
+        groupElement.appendChild(addTaskButton);
+
+        // Affichage du groupe
+        groupsContainer.appendChild(groupElement);
+    });
 }
 
-// Quand l'utilisateur clique sur <span> (x), fermer le modal
-span.onclick = function() {
-    modal.style.display = "none";
-}
+// Ajouter un nouveau groupe
+function addGroup() {
+    const groupNameInput = document.getElementById('groupName');
+    const groupName = groupNameInput.value.trim();
 
-// Quand l'utilisateur clique en dehors du modal, le fermer
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
+    if (groupName !== '') {
+        groups.push({ name: groupName, tasks: [] });
+        groupNameInput.value = '';
+        renderGroups();
     }
 }
 
-// Soumettre le formulaire
-document.getElementById("createGroupForm").onsubmit = function(e) {
-    e.preventDefault(); // Empêcher le rechargement de la page
-    // Logique pour créer le groupe ici
-
-    // Fermer le modal après soumission
-    modal.style.display = "none";
+// Supprimer un groupe
+function deleteGroup(groupIndex) {
+    groups.splice(groupIndex, 1);  // Retirer le groupe du tableau
+    renderGroups();  // Rafraîchir l'affichage
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-  loadUsers(); // Charge les utilisateurs après le chargement du DOM
-});
-
-function loadUsers() {
-  fetch('../php/get_members.php')
-  .then(response => response.json())
-  .then(data => {
-      if (Array.isArray(data)) {
-          const membersSelect = document.getElementById('members');
-          membersSelect.innerHTML = ''; // Réinitialiser le contenu
-
-          data.forEach(user => {
-              const option = document.createElement('option');
-              option.value = user.id; // ID de l'utilisateur
-              option.textContent = user.name; // Nom de l'utilisateur
-              membersSelect.appendChild(option);
-          });
-      } else {
-          console.error('Expected an array, but got:', data);
-      }
-  })
-  .catch(error => {
-      console.error('There was a problem with the fetch operation:', error);
-  });
+// Ajouter une tâche dans un groupe spécifique
+function addTask(groupIndex, taskTitle) {
+    if (taskTitle.trim() !== '') {
+        groups[groupIndex].tasks.push({ title: taskTitle, completed: false, comment: '' });
+        renderGroups();
+    }
 }
 
-
-
-document.addEventListener('DOMContentLoaded', function() {
-  loadUsers();
-});
-
-
-// Quand l'utilisateur clique sur le bouton, ouvrir le modal et charger les utilisateurs
-btn.onclick = function() {
-  loadUsers(); // Charger les utilisateurs
-  modal.style.display = "block";
+// Supprimer une tâche dans un groupe
+function deleteTask(groupIndex, taskIndex) {
+    groups[groupIndex].tasks.splice(taskIndex, 1);
+    renderGroups();
 }
 
+// Marquer ou dé-marquer une tâche comme complétée
+function toggleTaskCompletion(groupIndex, taskIndex) {
+    const task = groups[groupIndex].tasks[taskIndex];
+    task.completed = !task.completed;
+    renderGroups();
+}
 
+// Mettre à jour le commentaire d'une tâche
+function updateComment(groupIndex, taskIndex, comment) {
+    groups[groupIndex].tasks[taskIndex].comment = comment;
+}
 
+// Initialisation
+renderGroups();
 
-// Gérer la soumission du formulaire
-document.getElementById('createGroupForm').addEventListener('submit', function(event) {
-  event.preventDefault(); // Empêcher le comportement par défaut du formulaire
-
-  const groupName = document.getElementById('groupName').value;
-  const membersSelect = document.getElementById('members');
-  const members = Array.from(membersSelect.selectedOptions).map(option => option.value);
-
-  const data = {
-      groupName: groupName,
-      members: members,
-      created_by: userId,/* ID de l'utilisateur connecté */
-  };
-
-  fetch('../pages/taches.php', {
-      method: 'POST',
-      headers: {
-          'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-  })
-  .then(response => response.json())
-  .then(result => {
-      if (result.success) {
-          alert('Groupe créé avec succès');
-          // Ferme le modal ou fais autre chose ici
-      } else {
-          alert('Erreur lors de la création du groupe : ' + result.message);
-      }
-  })
-  .catch(error => {
-      console.error('Erreur:', error);
-  });
-});
-
+// Nav Barre
+function pagebar()
+{
+  var links=document.getElementById('navbar').getElementsByTagName("a");
+  var current = location.href;
+  for (var i=0; i < links.length; i++)
+  {
+   if(links[i].href == current)
+   {
+      links[i].href = "";
+      links[i].className='grayStyle';
+   }
+ }
+} 

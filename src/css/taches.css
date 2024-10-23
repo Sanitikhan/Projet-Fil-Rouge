@@ -180,9 +180,9 @@
     justify-content: center;
     margin: 0.5em;
 }
-.modal-content .submit-button button {
+.buttonAddGroup {
     padding: 1em 2em 1em 2em;
-    border-radius: 15px;
+    border-radius: 15px !important;
     font-weight: 800;
 }
 .modal-content .close {
@@ -254,4 +254,18 @@
 .addTaskForm button {
     padding: 0.7em 2em 0.7em 2em;
     border-radius: 15px;
+}
+
+.group {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+.task {
+    margin: 5px 0;
+}
+.completed {
+    text-decoration: line-through;
+    color: gray;
 }
