@@ -27,15 +27,27 @@ body {
   flex-grow: 1; /* Prendre tout l'espace restant */
 }
 
+.fond-page {
+  display: flex;
+  margin: 1em;
+  max-height: fit-content;
+  border-radius: 15px;
+  background-color: #ffffff31;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.123);
+  flex-grow: 1;
+  min-height: 41.5em;
+}
+
 navbar {
-    display: flex;
-    width: 250px;
-    flex-direction: column;
-    padding: 1em;
-    /*ackground-color: #F7E9DE;*/
-    gap: 1.5em;
-    border-radius: 15px;
-    min-height: 100%;
+  display: flex;
+  width: 250px;
+  flex-direction: column;
+  padding: 1em;
+  background-color: #F7E9DE;
+  gap: 1.5em;
+  border-radius: 15px;
+  min-height: 100%;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.123);
 }
 navbar .logo .texte-logo {
   display: flex;
@@ -69,6 +81,7 @@ navbar .active svg {
 navbar .active {
   background-color: #F15F61;
   color: #F0BBB4;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.123);
 }
 navbar .footer-navbar {
   display: flex;
@@ -89,11 +102,102 @@ navbar .fermer-sidebar {
   display: flex;
   margin-left: auto;
 }
+
+.zone-horssidebar {
+  display: flex;
+    justify-content: space-between; /* Espace entre les colonnes */
+    align-items: flex-start; /* Aligne les éléments en haut */
+}
+
+.zone-horssidebar h2{
+  color: #F15F61;
+  margin: 1em;
+}
+.liste-depliant {
+  padding: 0;
+}
+.depliant-titre {
+  background-color: #F15F61;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  text-align: left;
+  border: none;
+  outline: none;
+  transition: background-color 0.3s ease;
+}
+
+.depliant-titre:hover {
+  background-color: #e84649; /* Couleur de fond au survol */
+  color: #F7E9DE;
+}
+
+.depliant-contenu {
+  display: none; /* Cache le contenu par défaut */
+  padding: 10px;
+}
+
+.depliant-contenu p {
+  margin: 0;
+  color: #F15F61;
+}
+
+.zone-horssidebar .statistiques {
+  margin: 1em;
+}
+.zone-horssidebar .col {
+  flex: 1; /* Chaque colonne occupe un espace égal */
+}
+ul {
+  display: flexbox;
+  list-style-type: none; /* Enlève les puces par défaut */
+  padding-inline-start: 0;
+}
+ul li {
+  padding: 1em;
+  margin: 1em;
+  background-color: #F4BCAC;
+  border-radius: 15px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.123);
+}
+ul li::before {
+  content: "\2605"; /* Code Unicode pour une étoile */
+  color: #F15F61; /* Couleur de l'étoile */
+  font-size: 20px; /* Taille de l'étoile */
+}
+ul li .deadline {
+  font-style: italic;
+}
+
+.progress-bar-container {
+  width: 100%;
+  background-color: #F7E9DE;
+  border-radius: 5px;
+  overflow: hidden;
+  height: 0.5em;
+  margin: 0.5em 0 0 0;
+}
+.progress-bar {
+  width: 50%;
+  height: 100%;
+  background-color: #F15F61;
+  text-align: center;
+  line-height: 30px;
+  color: white;
+}
+.text-sousprogress {
+  font-size: 10px;
+}
+
+
 .zone-calendrier {
   background-color: #F7E9DE;
   border-radius: 15px;
   padding: 1em;
   margin: 1em;
+  flex: 0 0 auto; /* Ne pas étendre la largeur de cette colonne */
+  margin-left: auto; /* Pousse la colonne vers la droite */
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.123);
 }
 .ajouter-tache {
   display: flex;
@@ -150,8 +254,22 @@ button {
   border-radius: 15px !important;
   border: none;
   cursor: pointer;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.123);
 }
 button:hover {
   background-color: #F0BBB4;
   color: #F15F61;
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+::-webkit-scrollbar-track {
+  background: none;
+}
+::-webkit-scrollbar-thumb {
+  background: none;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: none;
 }

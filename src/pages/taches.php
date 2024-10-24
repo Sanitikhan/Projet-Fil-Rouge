@@ -70,7 +70,7 @@ $profilePicture = $user['profile_picture'] ?: '../../image/profil.png';
 </head>
 <body>
     <div class="container">
-        <div class="row fond">
+        <div class="row fond-page">
             <navbar>
                 <div class="logo">
                     <h1 class="texte-logo">R☆NA</h1>

@@ -14,7 +14,10 @@ $options = [
 ];
 
 try {
+    // Créer une instance PDO pour se connecter à la base de données
     $pdo = new PDO($dsn, $user, $pass, $options);
-} catch (\PDOException $e) {
-    echo json_encode(['success' => false, 'message' => 'Erreur de connexion']);
+} catch (PDOException $e) {
+    // Gérer les erreurs de connexion
+    echo json_encode(['success' => false, 'message' => 'Erreur de connexion à la base de données : ' . $e->getMessage()]);
+    exit();  // Arrêter l'exécution du script en cas d'échec de la connexion
 }

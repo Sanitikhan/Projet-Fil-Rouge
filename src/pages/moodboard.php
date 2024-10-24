@@ -24,7 +24,7 @@ $profilePicture = $user['profile_picture'] ?: '../../image/profil.png';
 </head>
 <body>
     <div class="container">
-        <div class="row fond">
+        <div class="row fond-page">
             <navbar>
                 <div class="logo">
                     <h1 class="texte-logo">R☆NA</h1>
@@ -69,13 +69,73 @@ $profilePicture = $user['profile_picture'] ?: '../../image/profil.png';
                 <div class="col">
                     <div class="row fond">
                         <div class="col fond">
-                            <div class="liste">
-                                <p>La liste</p>
+                        <div class="liste-depliant">
+                                <h2>La liste</h2>
+                                <ul>
+                                    <li>
+                                        <button class="depliant-titre">Créer un groupe teams</button>
+                                        <div class="depliant-contenu">
+                                            <p class="groupe">Groupe 1</p>
+                                            <p class="deadline">27/10/2024</p>
+                                        </div>
+                                        
+                                    </li>
+                                    <li>
+                                        <button class="depliant-titre">Faire une première réunion</button>
+                                        <div class="depliant-contenu">
+                                            <p class="groupe">Groupe 1</p>
+                                            <p class="deadline">30/10/2024</p>
+                                        </div>
+                                        
+                                    </li>
+                                    <li>
+                                        <button class="depliant-titre">Faire une maquette</button>
+                                        <div class="depliant-contenu">
+                                            <p class="groupe">Groupe 3</p>
+                                            <p class="deadline">31/10/2024</p>
+                                        </div>
+                                        
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                         <div class="col fond">
                             <div class="statistiques">
-                                <p>Les statistiques</p>
+                            <div class="liste-depliant">
+                                <h2>Les statistiques</h2>
+                                <ul>
+                                    <li>
+                                        <button class="depliant-titre">Groupe 1</button>
+                                        <div class="depliant-contenu">
+                                            <div class="progress-bar-container">
+                                                <div class="progress-bar"></div>
+                                            </div>
+                                            <p class="text-sousprogress">Progression : <span id="progressText">50</span>%</p>
+                                        </div>
+                                        
+                                    </li>
+                                    <li>
+                                        <button class="depliant-titre">Groupe 2</button>
+                                        <div class="depliant-contenu">
+                                            <div class="progress-bar-container">
+                                                <div class="progress-bar"></div>
+                                            </div>
+                                            <p class="text-sousprogress">Progression : <span id="progressText">50</span>%</p>
+                                        </div>
+                                        
+                                    </li>
+                                    <li>
+                                        <button class="depliant-titre">Groupe 3</button>
+                                        <div class="depliant-contenu">
+                                            <div class="progress-bar-container">
+                                                <div class="progress-bar"></div>
+                                            </div>
+                                            <p class="text-sousprogress">Progression : <span id="progressText">50</span>%</p>
+                                        </div>
+                                        
+                                    </li>
+                                </ul>
+                            </div>
                             </div>
                         </div>
                     </div>
@@ -121,5 +181,6 @@ $profilePicture = $user['profile_picture'] ?: '../../image/profil.png';
         </div>
     </div>
     <script src="../js/calendrier.js"></script>
+    <script src="../js/list.js"></script>
 </body>
 </html>
