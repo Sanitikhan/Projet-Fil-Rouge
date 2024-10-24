@@ -32,10 +32,10 @@ navbar {
     width: 250px;
     flex-direction: column;
     padding: 1em;
-    background-color: #F7E9DE;
+    /*ackground-color: #F7E9DE;*/
     gap: 1.5em;
     border-radius: 15px;
-    height: 100%; /* Prendre 100% de la hauteur disponible */
+    min-height: 100%;
 }
 navbar .logo .texte-logo {
   display: flex;
