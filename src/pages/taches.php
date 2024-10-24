@@ -179,5 +179,6 @@ $profilePicture = $user['profile_picture'] ?: '../../image/profil.png';
 
     <script src="../js/popup.js"></script>
     <script src="../js/navbar.js"></script>
+    <script src="../js/taches.js"></script>
 </body>
 </html>

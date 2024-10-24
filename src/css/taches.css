@@ -2,7 +2,6 @@
     display: flex;
     margin: 1.5em;
 }
-
 .zone-cards-taches {
     display: grid;
     grid-template-columns: repeat(5, 1fr);

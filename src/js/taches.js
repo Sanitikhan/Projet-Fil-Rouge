@@ -121,7 +121,7 @@ function addNewGroup() {
     renderGroups(); // Re-render les groupes
 
     // Envoyer le groupe au serveur pour l'enregistrer
-    fetch('path/to/data.json', { // Remplace par le chemin vers ton fichier JSON
+    fetch('../json/data.json', { // Remplace par le chemin vers ton fichier JSON
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -149,7 +149,7 @@ function addNewGroup() {
 }
 
 function saveGroups() {
-    fetch('path/to/data.json', {
+    fetch('../json/data.json', {
         method: 'PUT', // Ou 'PATCH' selon ton API
         headers: {
             'Content-Type': 'application/json'
@@ -169,8 +169,6 @@ function saveGroups() {
         console.error('Erreur lors de la sauvegarde des groupes:', error);
     });
 }
-
-
 
 // Supprimer une carte de groupe
 function deleteCard(groupId) {
