@@ -1,0 +1,137 @@
+.big-block{
+    min-height: 80%;
+    padding-left: 10%;
+    padding-right: 10%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+    color: #F15F61;
+    min-width: 90 wv;
+}
+.bg-bg {
+    padding: 1em;
+    border-radius: 15px;
+    background-color: #ffffff31;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.123);
+}
+.down{
+    margin-left: 2%;
+    cursor: pointer;
+}
+.zone-horssidebar .col {
+    flex: none !important;
+}
+.theme{
+    display: flex;
+    gap: 1em;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+.title{
+    margin-bottom: 50px;
+    font-weight: bold;
+    font-size: 50px;
+}
+.options-title{
+    font-weight: bold;
+}
+hr{
+    border: 2px solid #F15F61;
+    min-width: 40vw;
+}
+.ligne2{
+
+  .options-title{
+    background-color: #F0BBB4 ; 
+    height: 35px;
+ 
+    border-radius: 15px;
+    padding-left: 10px;
+    padding-top: 5px;
+
+  }
+
+  .langue{
+    padding-top: 10px;
+    padding-bottom: 5px;
+    visibility:visible !important;
+    background-color: #ffffff20;
+    border-radius: 15px;
+    padding-left:5px;
+    padding-right:5px;
+  
+    p{
+      height: 35px;
+      width: 585px;
+      border-radius: 15px;
+      padding-left: 10px;
+      padding-top: 5px;
+      cursor: pointer;
+    }
+  
+    p:hover{
+      background-color: #f0bbb472;
+    }
+  }
+
+}
+
+.options-title :hover{
+  background-color: #F0BBB4 ; 
+  height: 35px;
+  border-radius: 15px;
+  padding-left: 10px;
+  padding-top: 5px;
+}
+
+.ligne2_after{
+  .langue{
+    visibility:hidden;
+    max-height: 0px;
+  }
+
+  .options-title{
+    height: 35px;
+    padding-top: 5px;
+    padding-left: 10px;
+    cursor: pointer;
+  }
+}
+
+.ligne0{
+  .color-select{
+    border: none;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+  }
+  .theme{
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .options-title{
+    background-color: #F0BBB4 ; 
+    height: 35px;
+    border-radius: 15px;
+    padding-left: 10px;
+    padding-top: 5px;
+    width: 600px;
+  }
+}
+.ligne0_after{
+  .theme{
+    display:none;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+::-webkit-scrollbar-track {
+  background: none;
+}
+::-webkit-scrollbar-thumb {
+  background: none;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: none;
+}

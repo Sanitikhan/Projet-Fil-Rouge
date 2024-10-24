@@ -57,6 +57,9 @@ navbar .logo .texte-logo {
   padding: 0.2em;
   border-radius: 15px;
 }
+navbar .logo .logo-sidebar {
+  display: none;
+}
 navbar a {
     display: flex;
     justify-content: center;
@@ -64,6 +67,9 @@ navbar a {
     border-radius: 15px;
     color: #F15F61;
     font-weight: 800;
+}
+navbar .pages {
+  padding: 0em;
 }
 navbar a:hover {
   color: #F15F61;
@@ -102,6 +108,60 @@ navbar .fermer-sidebar {
   display: flex;
   margin-left: auto;
 }
+
+navbar.expanded {
+  width: 250px; /* Retour à la largeur pleine */
+}
+
+navbar.expanded .logo .texte-logo,
+navbar.expanded .pages a span {
+  display: block; /* Montrer le texte */
+}
+
+
+/* Sidebar ouverte */
+navbar {
+  width: 250px; /* Largeur par défaut de la sidebar */
+  transition: width 0.3s ease;
+}
+
+/* Sidebar fermée */
+navbar.reduced {
+  width: 60px; /* Largeur réduite de la sidebar */
+}
+navbar.reduced .logo .texte-logo {
+  padding: 1em;
+}
+
+/* Masquer les textes de la navigation quand la sidebar est réduite */
+navbar.reduced .pages a p {
+  display: none;
+}
+navbar.reduced .footer-navbar {
+  display: inline;
+  justify-content: center;
+}
+
+navbar.reduced .logo h1 {
+  font-size: 1rem; /* Réduire la taille du logo texte */
+}
+
+/* Optionnel : Si vous souhaitez que seules les icônes restent visibles */
+navbar.reduced .pages a svg {
+  margin: 1em auto; /* Centrer les icônes */
+  display: block;
+}
+
+/* Réduire la taille de l'image de profil dans la footer-navbar */
+navbar.reduced .footer-navbar .profile-pic {
+  width: 40px;
+  height: 40px;
+}
+navbar.reduced .fermer-sidebar {
+  display: flex;
+  margin-left: 10px;
+}
+
 
 .zone-horssidebar {
   display: flex;

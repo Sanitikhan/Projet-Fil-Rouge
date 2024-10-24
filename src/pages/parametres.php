@@ -18,12 +18,14 @@ $profilePicture = $user['profile_picture'] ?: '../../image/profil.png';
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>R☆NA</title>
-    <link rel="icon" href="image/logo.png" type="image/png">
+    <link rel="icon" href="../../image/logo.png" type="image/png">
+    <link rel="stylesheet" href="../css/parametres.css">
     <link rel="stylesheet" href="../../index.css">
     
 </head>
 <body>
-    <div class="container">
+
+<div class="container">
         <div class="row fond-page">
             <navbar>
                 <div class="logo">
@@ -31,16 +33,16 @@ $profilePicture = $user['profile_picture'] ?: '../../image/profil.png';
                 </div>
                 <div class="pages">
                     <div class="page1">
-                        <a href="moodboard.php">
+                        <a href="moodboard.php" class="pages">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><path d="M575.8 255.5c0 18-15 32.1-32 32.1l-32 0 .7 160.2c0 2.7-.2 5.4-.5 8.1l0 16.2c0 22.1-17.9 40-40 40l-16 0c-1.1 0-2.2 0-3.3-.1c-1.4 .1-2.8 .1-4.2 .1L416 512l-24 0c-22.1 0-40-17.9-40-40l0-24 0-64c0-17.7-14.3-32-32-32l-64 0c-17.7 0-32 14.3-32 32l0 64 0 24c0 22.1-17.9 40-40 40l-24 0-31.9 0c-1.5 0-3-.1-4.5-.2c-1.2 .1-2.4 .2-3.6 .2l-16 0c-22.1 0-40-17.9-40-40l0-112c0-.9 0-1.9 .1-2.8l0-69.7-32 0c-18 0-32-14-32-32.1c0-9 3-17 10-24L266.4 8c7-7 15-8 22-8s15 2 21 7L564.8 231.5c8 7 12 15 11 24z"/></svg>
-                            Moodboard
+                            <p>Moodboard</p>
                         </a>
                     </div>
                     <div class="page2">
                         <img src="">
-                        <a href="taches.php">
+                        <a href="taches.php" class="pages">
                             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M64 80c-8.8 0-16 7.2-16 16l0 320c0 8.8 7.2 16 16 16l320 0c8.8 0 16-7.2 16-16l0-320c0-8.8-7.2-16-16-16L64 80zM0 96C0 60.7 28.7 32 64 32l320 0c35.3 0 64 28.7 64 64l0 320c0 35.3-28.7 64-64 64L64 480c-35.3 0-64-28.7-64-64L0 96zM337 209L209 337c-9.4 9.4-24.6 9.4-33.9 0l-64-64c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l47 47L303 175c9.4-9.4 24.6-9.4 33.9 0s9.4 24.6 0 33.9z"/></svg>
-                            Mes tâches
+                            <p>Mes tâches</p>
                         </a>
                     </div>
                 </div>
@@ -65,17 +67,103 @@ $profilePicture = $user['profile_picture'] ?: '../../image/profil.png';
                 </div>
             </navbar>
 
-            <div class="col">
-                <div class="zone-horssidebar">
+            <div class="zone-horssidebar fond">
+                <div class="big-block">
+                    <h1 class="title" style="color: #F15F61;">Paramètres</h1>
+                    <div class="bg-bg">
+                        <div class="ligne0_after"  onclick="up_down1(event)" id="ligne0">
+                                    <p class="options-title col-10" id="ligne1">
+                                        Apparence 
+                                    </p>
 
+                                    <div class="theme row" id="theme">
+                                        <div class="col">
+                                            <button class="color-select" 
+                                            style="background: rgb(240,187,180);
+                                            background: linear-gradient(135deg, rgba(240,187,180,1) 1%, rgba(241,95,97,1) 100%);
+                                            border:#FEF9F2 4px solid" ></button>
+                                        </div>
+                                        <div class="col">
+                                            <button class="color-select" 
+                                            style="background: rgb(223,242,235);
+                                            background: linear-gradient(135deg, rgba(223,242,235,1) 1%, rgba(74,98,138,1) 100%);" 
+                                            ></button>
+                                        </div>
+                                        <div class="col">
+                                            <button class="color-select"
+                                            style="background: rgb(255,220,174);
+                                            background: linear-gradient(135deg, rgba(255,220,174,1) 1%, rgba(118,186,153,1) 100%);"
+                                            ></button>
+                                        </div>
+                                        
+                                        
+                                    
+                                    </div>
+                                    
+                        </div>
+                        <hr>
+                        <div class="ligne2_after" id="ligne2" onclick="up_down2(event)">
+
+                                    <p class="options-title" >
+                                        Langue
+                                    </p>
+
+                                    <div class="langue " id="langue">
+                                        <p>Français</p>
+                                        <p>Anglais</p>
+                                        <p>Espagnol</p>
+                                        <p>Allemand</p>
+                                    </div>
+                                    
+                        </div>
+                    </div>
                 </div>
             </div>
         
         </div>
     </div>
 
-    <script src="src/js/calendrier.js"></script>
-    <script src="src/js/profil.js"></script>
-   <script src="src/js/logout.js"></script> 
+    <script src="../js/profil.js"></script>
+   <script src="../js/logout.js"></script>
+   <script src="../js/navbar.js"></script>
+   <script>
+        function up_down1(event){
+            const theme = document.getElementById('theme');
+            const ligne0 = document.getElementById('ligne0');
+      
+                if (ligne0.classList.contains('ligne0')) {
+                    ligne0.classList.remove('ligne0');
+                    ligne0.classList.add('ligne0_after');
+                    
+                    
+                } else if (ligne0.classList.contains('ligne0_after')) {
+                    ligne0.classList.remove('ligne0_after');
+                    ligne0.classList.add('ligne0');
+                    
+                }
+           
+
+        }
+
+        function up_down2(event){
+            const langue = document.getElementById('langue');
+            const ligne2 = document.getElementById('ligne2');
+      
+                if (ligne2.classList.contains('ligne2')) {
+                    ligne2.classList.remove('ligne2');
+                    ligne2.classList.add('ligne2_after');
+                    
+                    
+                } else if(ligne2.classList.contains('ligne2_after')) {
+                    ligne2.classList.remove('ligne2_after');
+                    ligne2.classList.add('ligne2');
+                    
+                }
+           
+
+        }
+
+
+    </script>
 </body>
 </html>

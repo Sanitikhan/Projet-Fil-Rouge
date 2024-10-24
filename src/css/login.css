@@ -1,11 +1,9 @@
 body{
-
     margin: 0;
     width: 100%;
     height: 100%;
     background: linear-gradient(-50deg, #F0BBB4 25%, #F4BCAC 32%, #FFBE98 64%) !important;
     animation: gradient 5s ease infinite !important;
-
 }
 
 .big-txt{
@@ -16,10 +14,10 @@ body{
 
 .card-login{
     background-color: #f1f1f19f;
-    height: 40vw;
+    height: 30vw;
     width: 40vw;
     margin-left: 30vw;
-    margin-top: 5vw;
+    margin-top: 2vw;
     border-radius: 15px;
     padding: 50px;
     box-shadow: 0px 10px 40px -10px rgba(0, 0, 0, 0.75);
@@ -36,7 +34,7 @@ label{
     background-color: #F15F61;
     border: none;
     height: 73px;
-    width: 307px;
+    width: 1em;
     border-radius: 15px;
     margin-left: 20%;
     color: #F0BBB4;
@@ -61,7 +59,6 @@ label{
 }
 
 input{
-   
     height: 55px;
     background-color: #f1f1f1ee !important; 
     border-radius: 15px !important;
